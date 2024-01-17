@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <textarea id="areaNumeracion" cols="1" rows="25" readonly></textarea>
+        <textarea id="txCodigo" rows="25" cols="70" onkeyup="numeracion(event);"></textarea>
+      </form>
+    <script>
+        window.onload = function() {
+  numeracion();
+}
+
+function numeracion(e) {
+  let eArea = document.getElementById('areaNumeracion');
+  let eArea2 = document.getElementById('txCodigo');
+  let numeros = eArea2.value.split("\n").length;
+  let msj = "";
+  for (let i = 0; i < numeros; i++) {
+    msj += (i + 1) + "\n";
+  }
+  eArea.value = msj;
+}
+    </script>
+</body>
+</html>
